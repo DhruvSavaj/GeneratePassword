@@ -12,7 +12,9 @@ namespace RandomeExample
         {
             Console.WriteLine("Enter Password Length:");
             string passLength = Console.ReadLine();
-            GenratePassword(Convert.ToInt32(passLength));
+            
+            if (passLength.Length > 0)
+                GeneratePassword(Convert.ToInt32(passLength));
             
             Console.WriteLine("\nDo you want to Generate a new password yes or no ?");
             
@@ -24,7 +26,10 @@ namespace RandomeExample
             {
                 Console.WriteLine("Enter Password Length:");
                 passLength = Console.ReadLine();
-                GenratePassword(Convert.ToInt32(passLength));
+                
+                if (passLength.Length > 0)
+                    GeneratePassword(Convert.ToInt32(passLength));
+                
                 Console.WriteLine("\nDo you want to Generate a new password y or n ?");
                 wantToContinue = Console.ReadLine();
             }
@@ -33,7 +38,7 @@ namespace RandomeExample
             Console.ReadLine();
         }
 
-        public static void GenratePassword(int len)
+        public static void GeneratePassword(int len)
         {
             string password = "";
             string UpperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
